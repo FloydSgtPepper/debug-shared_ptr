@@ -1,0 +1,5 @@
+/** \file todo.dox 
+
+\page next steps
+    - use boost stacktrace
+    - support for Deleter

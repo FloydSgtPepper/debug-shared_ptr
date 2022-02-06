@@ -1,0 +1,52 @@
+{
+    "environments": [
+        {
+            "OPT_CMAKE_INCL_PATH": "${projectDir}\\cmake_ext"
+        }
+    ],
+    "configurations": [
+        {
+            "name": "x64-Debug",
+            "generator": "Ninja",
+            "configurationType": "Debug",
+            "inheritEnvironments": [ "msvc_x64_x64" ],
+            "buildRoot": "${projectDir}\\build\\build\\${name}",
+            "installRoot": "${projectDir}\\build\\install\\${name}",
+            "cmakeExecutable": "c:\\Program Files\\CMake\\bin\\cmake.exe",
+            "cmakeCommandArgs": "-DOPT_CMAKE_INCL_PATH=${env.OPT_CMAKE_INCL_PATH} -Wdeprecated",
+            "buildCommandArgs": "",
+            "ctestCommandArgs": "",
+            "intelliSenseMode": "windows-msvc-x64",
+            "enableClangTidyCodeAnalysis": false,
+            "enableMicrosoftCodeAnalysis": true,
+            "variables": [
+                {
+                    "name": "CMAKE_MAKE_PROGRAM",
+                    "value": "C:/LegacyApp/ninja/ninja.exe"
+                }
+            ]
+        },
+        {
+            "name": "x64-Release",
+            "generator": "Ninja",
+            "configurationType": "Release",
+            "inheritEnvironments": [ "msvc_x64_x64" ],
+            "buildRoot": "${projectDir}\\build\\build\\${name}",
+            "installRoot": "${projectDir}\\build\\install\\${name}",
+            "cmakeExecutable": "c:\\Program Files\\CMake\\bin\\cmake.exe",
+            "cmakeCommandArgs": "-DOPT_CMAKE_INCL_PATH=${env.OPT_CMAKE_INCL_PATH} -Wdeprecated",
+            "buildCommandArgs": "",
+            "ctestCommandArgs": "",
+            "intelliSenseMode": "windows-msvc-x64",
+            "enableClangTidyCodeAnalysis": false,
+            "enableMicrosoftCodeAnalysis": true,
+            "variables": [
+                {
+                    "name": "CMAKE_MAKE_PROGRAM",
+                    "value": "C:/LegacyApp/ninja/ninja.exe"
+                }
+            ]
+
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+/** \file mainpage.dox 
+
+\mainpage The Main Page
+\section Introduction
+A shared_ptr class which can provide additional information for inspecting who is sharing the data the pointer holds.
+
+
+\dot
+graph G {
+    node[shape=record,style=filled,fillcolor=gray95 ]
+    edge[dir=back, arrowtail=empty]
+    #rankdir = "TB"
+    subgraph shared {
+        shared_ptr
+        weak_ptr
+        PtrBase [label = "{_PtrBase|+ptr : T*\l+_ref_counter : _RefCounterBase*| ..}"]
+    
+     
+        PtrBase -- shared_ptr
+        PtrBase -- weak_ptr
+    }
+
+    subgraph shared_from_this {
+        enable_shared_from_this [label = "{enable_shared_from_this|+_ref_counter : _RefCounterBase*}"]
+    }
+    
+    subgraph RefCounter {
+        RefCounterBase [label="{_RefCounterBase|+_uses : uint32\l+_weaks : uint32}", fillcolor=blue, fontcolor=yellow]
+        RefCounterResource [label="{_RefCounterResource}"]
+        RefCounterWithDeleter [label="{_RefCounterWithDeleter}"]
+
+        RefCounterBase -- RefCounterResource [arrowtail=normal]
+        RefCounterBase -- RefCounterWithDeleter [arrowtail=normal]
+    }
+
+    rank = same; PtrBase; RefCounterBase; enable_shared_from_this;
+
+    #PtrBase -- RefCounterBase [arrowtail=none, style=dotted]
+}
+
+\enddot
+
+*/
